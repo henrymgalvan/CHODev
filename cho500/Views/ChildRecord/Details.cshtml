@@ -1,0 +1,104 @@
+﻿@model cho500.Models.ChildRecords.ChildBirthHistoryRecordDetailsViewModel
+
+@{
+    ViewBag.Title = "Details of Child Record";
+}
+
+<h3>Details</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.PatientName)</dt>
+        <dd>@Html.DisplayFor(model => model.PatientName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.BirthDate)</dt>
+        <dd>@Html.DisplayFor(model => model.BirthDate)</dd>
+    </dl>
+    <h4>Child Birth History</h4>
+    <h5>Term</h5>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Months)</dt>
+        <dd>@Html.DisplayFor(model => model.Months)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Weeks)</dt>
+        <dd>@Html.DisplayFor(model => model.Weeks)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Days)</dt>
+        <dd>@Html.DisplayFor(model => model.Days)</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.TypeOfDelivery)</dt>
+        <dd>@Html.DisplayFor(model => model.TypeOfDelivery)</dd>
+        <dt>@Html.DisplayNameFor(model => model.BirthWeightInPounds)</dt>
+        <dd>@Html.DisplayFor(model => model.BirthWeightInPounds)</dd>
+        <dt>@Html.DisplayNameFor(model => model.BirthLength)</dt>
+        <dd>@Html.DisplayFor(model => model.BirthLength)</dd>
+        <dt>@Html.DisplayNameFor(model => model.HeadCircumference)</dt>
+        <dd>@Html.DisplayFor(model => model.HeadCircumference)</dd>
+        <dt>@Html.DisplayNameFor(model => model.ChestCircumference)</dt>
+        <dd>@Html.DisplayFor(model => model.ChestCircumference)</dd>
+        <dt>@Html.DisplayNameFor(model => model.AbdominalCircumference)</dt>
+        <dd>@Html.DisplayFor(model => model.AbdominalCircumference)</dd>
+        @*<dt>@Html.DisplayNameFor(model => model.BloodType)</dt>
+        <dd>@Html.DisplayFor(model => model.BloodType)</dd>*@
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<h4>Immunization Record</h4>
+@Html.ActionLink("Create Immunization", "Create", "ChildImmunization", new { patientID = Model.PatientId }, null)
+<table class="table">
+    <tr>
+        <th>Vaccine</th>
+        <th>First</th>
+        <th>Second</th>
+        <th>Third</th>
+        <th>Booster1</th>
+        <th>Booster2</th>
+        <th>Booster3</th>
+        <th>Reaction</th>
+
+    </tr>
+    @foreach (var item in Model.ChildImmunizationRecordsViewModel)
+    {
+        <tr>
+            @*<td>@Html.DisplayFor(modelItem => item.VaccineName)</td>*@
+            <td>@Html.ActionLink(item.VaccineName,"Details","ChildImmunization", new{id=item.Id},null )</td>
+            <td>@Html.DisplayFor(modelItem => item.First)</td>
+            <td>@Html.DisplayFor(modelItem => item.Second)</td>
+            <td>@Html.DisplayFor(modelItem => item.Third)</td>
+            <td>@Html.DisplayFor(modelItem => item.Booster1)</td>
+            <td>@Html.DisplayFor(modelItem => item.Booster2)</td>
+            <td>@Html.DisplayFor(modelItem => item.Booster3)</td>
+            <td>@Html.DisplayFor(modelItem => item.Reaction)</td>
+        </tr>
+    }
+</table>
+
+<h4>Child Birth Follow Up Visits</h4>
+@Html.ActionLink("Create Follow Up", "Create", "CBFollowUp", new { patientID = Model.PatientId }, null)
+<table class="table">
+    <tr>
+        <th>Date</th>
+        <th>Age In Weeks</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Physician</th>
+        <th>Diagnosis</th>
+        <th>Notes</th>
+    </tr>
+    @foreach (var visit in Model.ChildBirthFollowUpVisitsViewModel)
+    {
+        <tr>
+            <td>@Html.ActionLink(visit.DateOfFollowUp, "Details", "CBFollowUp", new { id = visit.Id }, null)</td>
+
+            @*//<td>@Html.DisplayFor(modelItem => visit.DateOfFollowUp)</td>*@
+            <td>@Html.DisplayFor(modelItem => visit.AgeInWeeks)</td>
+            <td>@Html.DisplayFor(modelItem => visit.Weight)</td>
+            <td>@Html.DisplayFor(modelItem => visit.Height)</td>
+            <td>@Html.DisplayFor(modelItem => visit.Physician)</td>
+            <td>@Html.DisplayFor(modelItem => visit.Diagnosis)</td>
+            <td>@Html.DisplayFor(modelItem => visit.Notes)</td>
+        </tr>
+    }
+</table>

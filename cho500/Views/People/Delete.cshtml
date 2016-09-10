@@ -1,0 +1,232 @@
+﻿@model cho500.Entity.Person
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodType.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodType.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildHealthRecords.TypeOfDelivery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildHealthRecords.TypeOfDelivery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtensionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtensionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameTittle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameTittle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CivilStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CivilStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkSkills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherPersonId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherPersonId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherPersonId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherPersonId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseholdProfileID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseholdProfileID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhilHealthNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhilHealthNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandlineNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandlineNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactNumberCP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactNumberCP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactNumberLL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactNumberLL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactBirthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactBirthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encoder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encoder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

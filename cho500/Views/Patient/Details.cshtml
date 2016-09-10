@@ -1,0 +1,133 @@
+﻿@model cho500.Models.Patient.DetailsPatientViewModel
+
+@{
+    ViewBag.Title = "Patient Info";
+}
+
+<h3>Details of @Model.FullName</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.FullName)</dt>
+        <dd>@Html.DisplayFor(model => model.FullName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Age)</dt>
+        <dd>@Html.DisplayFor(model => model.Age)</dd> 
+        <dt>@Html.DisplayNameFor(model => model.DateOfBirth)</dt>
+        <dd>@Html.DisplayFor(model => model.DateOfBirth)</dd>
+        <dt>@Html.DisplayNameFor(model => model.PlaceOfBirth)</dt>
+        <dd>@Html.DisplayFor(model => model.PlaceOfBirth)</dd> 
+        <dt>@Html.DisplayNameFor(model => model.Sex)</dt>
+        <dd>@Html.DisplayFor(model => model.Sex)</dd>
+        <dt>@Html.DisplayNameFor(model => model.BloodType)</dt>
+        <dd>@Html.DisplayFor(model => model.BloodType)</dd>
+        <dt>@Html.DisplayNameFor(model => model.CivilStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.CivilStatus)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ContactNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.ContactNumber)</dd>  
+        <dt>@Html.DisplayNameFor(model => model.LandlineNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.LandlineNumber)</dd>      
+
+        <dt>@Html.DisplayNameFor(model => model.HouseholdProfileID)</dt>
+        <dd>@Html.DisplayFor(model => model.HouseholdProfileID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Father)</dt>
+        <dd>@Html.DisplayFor(model => model.Father)</dd>
+        <dt>@Html.DisplayNameFor(model => model.FathersBirthdate)</dt>
+        <dd>@Html.DisplayFor(model => model.FathersBirthdate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Mother)</dt>
+        <dd>@Html.DisplayFor(model => model.Mother)</dd>    
+        <dt>@Html.DisplayNameFor(model => model.MothersBirthdate)</dt>
+        <dd>@Html.DisplayFor(model => model.MothersBirthdate)</dd>  
+@*Educational Attainment and Employment info*@                   
+        <dt>@Html.DisplayNameFor(model => model.HighestEducationalAttainment)</dt>
+        <dd>@Html.DisplayFor(model => model.HighestEducationalAttainment)</dd>  
+        <dt>@Html.DisplayNameFor(model => model.EducationStats)</dt>
+        <dd>@Html.DisplayFor(model => model.EducationStats)</dd>  
+        <dt>@Html.DisplayNameFor(model => model.Degree)</dt>
+        <dd>@Html.DisplayFor(model => model.Degree)</dd>  
+
+        <dt>@Html.DisplayNameFor(model => model.WorkSkills)</dt>
+        <dd>@Html.DisplayFor(model => model.WorkSkills)</dd>
+        <dt>@Html.DisplayNameFor(model => model.EmploymentAgency)</dt>
+        <dd>@Html.DisplayFor(model => model.EmploymentAgency)</dd>
+@*Address*@
+        <dt>@Html.DisplayNameFor(model => model.Address)</dt>
+        <dd>@Html.DisplayFor(model => model.Address)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Barangay)</dt>
+        <dd>@Html.DisplayFor(model => model.Barangay)</dd>
+        <dt>@Html.DisplayNameFor(model => model.City)</dt>
+        <dd>@Html.DisplayFor(model => model.City)</dd>  
+        <dt>@Html.DisplayNameFor(model => model.Province)</dt>
+        <dd>@Html.DisplayFor(model => model.Province)</dd> 
+        
+        <dt>@Html.DisplayNameFor(model => model.Religion)</dt>
+        <dd>@Html.DisplayFor(model => model.Religion)</dd>  
+@*Health Insurance Info*@                        
+        <dt>@Html.DisplayNameFor(model => model.PhilHealthNo)</dt>
+        <dd>@Html.DisplayFor(model => model.PhilHealthNo)</dd>
+        <dt>@Html.DisplayNameFor(model => model.PhicMembership)</dt>
+        <dd>@Html.DisplayFor(model => model.PhicMembership)</dd>
+        <dt>@Html.DisplayNameFor(model => model.IndividuallyPayingProgram)</dt>
+        <dd>@Html.DisplayFor(model => model.IndividuallyPayingProgram)</dd>
+        <dt>@Html.DisplayNameFor(model => model.MembershipCategoryGroup)</dt>
+        <dd>@Html.DisplayFor(model => model.MembershipCategoryGroup)</dd>
+        <dt>@Html.DisplayNameFor(model => model.CurrentMembershipStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.CurrentMembershipStatus)</dd>   
+@*Emergency Contact Information*@
+        <dt>@Html.DisplayNameFor(model => model.EmergencyContactName)</dt>
+        <dd>@Html.DisplayFor(model => model.EmergencyContactName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.EmergencyContactNumberCP)</dt>
+        <dd>@Html.DisplayFor(model => model.EmergencyContactNumberCP)</dd>
+        <dt>@Html.DisplayNameFor(model => model.EmergencyContactNumberLL)</dt>
+        <dd>@Html.DisplayFor(model => model.EmergencyContactNumberLL)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Relation)</dt>
+        <dd>@Html.DisplayFor(model => model.Relation)</dd>
+        <dt>@Html.DisplayNameFor(model => model.EmergencyContactBirthday)</dt>
+        <dd>@Html.DisplayFor(model => model.EmergencyContactBirthday)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Encoder)</dt>
+        <dd>@Html.DisplayFor(model => model.Encoder)</dd>
+        <dt>@Html.DisplayNameFor(model => model.DateCreated)</dt>
+        <dd>@Html.DisplayFor(model => model.DateCreated)</dd>
+        <dt>@Html.DisplayNameFor(model => model.LastDateUpdated)</dt>
+        <dd>@Html.DisplayFor(model => model.LastDateUpdated)</dd>
+          
+        <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Notes)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |   
+    @Html.ActionLink("Back to List of Patients", "Index")
+</p>
+
+@Html.ActionLink("Create New Consultation Record", "Create", "Consults", new { PatientId = Model.ID}, null) |
+@Html.ActionLink("View Child Health Record", "Details", "ChildRecord", new { id = Model.ID }, null)
+
+
+<table class="table">
+    <tr>
+        <th>Chief Complaint</th>        
+        <th>Admitted By</th>
+        <th>Date Of Consult</th>
+        <th>Previous Consult Date</th>
+        <th>Place of Previous Consult</th>
+        <th>Age</th>
+        <th>Physician</th>
+    </tr>
+    @*@foreach (var item in Model.Consultations)
+    {
+        <tr>
+            <td>@Html.ActionLink(item.ChiefComplaint, "Details","Consults", new { id = item.ConsultationID }, null)</td>
+            <td>@Html.DisplayFor(modelItem => item.AdmittedBy)</td>
+            <td>@Html.DisplayFor(modelItem => item.DateOfConsult)</td>
+            <td>@Html.DisplayFor(modelItem => item.PreviousConsultDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.PreviousConsult)</td>
+            <td>@Html.DisplayFor(modelItem => item.Age)</td>
+            <td>@Html.DisplayFor(modelItem=>item.Physician.Name)</td>
+        </tr>
+    }*@
+
+</table>

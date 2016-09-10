@@ -1,0 +1,34 @@
+﻿@model cho500.Models.ChildRecords.ChildImmunizationRecordViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>Immunization Details for @Model.Name</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.VaccineName)</dt>
+        <dd>@Html.DisplayFor(model => model.VaccineName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.First)</dt>
+        <dd>@Html.DisplayFor(model => model.First)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Second)</dt>
+        <dd>@Html.DisplayFor(model => model.Second)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Third)</dt>
+        <dd>@Html.DisplayFor(model => model.Third)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Booster1)</dt>
+        <dd>@Html.DisplayFor(model => model.Booster1)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Booster2)</dt>
+        <dd>@Html.DisplayFor(model => model.Booster2)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Booster3)</dt>
+        <dd>@Html.DisplayFor(model => model.Booster3)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Reaction)</dt>
+        <dd>@Html.DisplayFor(model => model.Reaction)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("List of Immunization", "Index") |
+    @Html.ActionLink("Back to Patient Child Record", "Details", "ChildRecord", new { id = Model.PersonID }, null)
+</p>

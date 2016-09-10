@@ -1,0 +1,57 @@
+﻿@model cho500.Entity.HouseholdProfile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HouseholdProfile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>@Html.DisplayNameFor(model => model.Respondent.FullName)</dt>*@
+        <dt>Respondent Name</dt>
+        <dd>@Html.DisplayFor(model => model.Respondent.FullName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.HouseholdProfileID)</dt>
+        <dd>@Html.DisplayFor(model => model.HouseholdProfileID)</dd>
+        <dt>@Html.DisplayNameFor(model => model.FourPsCCTBeneficiary)</dt>
+        <dd>@Html.DisplayFor(model => model.FourPsCCTBeneficiary)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Address)</dt>
+        <dd>@Html.DisplayFor(model => model.Address)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Barangay.Name)</dt>
+        <dd>@Html.DisplayFor(model => model.Barangay.Name)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Note)</dt>
+        <dd>@Html.DisplayFor(model => model.Note)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Add Household Member", "Create", "HouseholdMembers", new { houseHoldId = Model.HouseholdProfileID },null)
+</p>
+
+<table class="table">
+    <tr>
+        <th>Member Name</th>
+        <th>Relation</th>
+        <th>Birthday</th>
+        <th>PhilHealth</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.HouseholdMembers)
+    {
+        <tr>
+            @*<td>@Html.DisplayFor(modelItem => item.Member.FullName)</td>*@
+            <td>@Html.ActionLink(item.Member.FullName,"Details","Patient",new { id=item.PersonID},null)</td>
+            <td>@Html.DisplayFor(modelItem => item.RelationToHead)</td>
+            <td>@Html.DisplayFor(modelItem => item.Member.DateOfBirth)</td>
+            <td>@Html.DisplayFor(modelItem => item.Member.PhilHealthNo)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "HouseholdMembers" ,new { id = item.Id },null) |
+                @Html.ActionLink("Details", "Details", "HouseholdMembers", new { id = item.Id },null) |
+                @Html.ActionLink("Delete", "Delete", "HouseholdMembers", new { id = item.Id },null)
+            </td>
+        </tr>
+    }
+</table>

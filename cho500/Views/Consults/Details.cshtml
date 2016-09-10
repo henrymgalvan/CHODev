@@ -1,0 +1,232 @@
+﻿@model cho500.Models.DetailsConsultViewModel
+
+@{
+    ViewBag.Title = "Consult Details";
+}
+
+<h3>Details of Consultation</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdmittedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdmittedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfConsult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfConsult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousConsultDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousConsultDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousConsult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousConsult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiefComplaint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiefComplaint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BPFirstReading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPFirstReading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BPSecondReading)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPSecondReading)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BPAverage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BPAverage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaisedBP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaisedBP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PulseRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PulseRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Temperature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Temperature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInKgms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightInKgms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeightInCm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeightInCm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaistCircumferenceInCm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaistCircumferenceInCm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CentralAdiposity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CentralAdiposity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BMI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BMI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BMIStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BMIStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.History)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.History)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalExam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalExam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiagnosisLabResult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiagnosisLabResult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagementTreatment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagementTreatment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recommendation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recommendation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pharmacy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pharmacy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Physician)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Physician)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id , PatientName=Model.PatientName}) |
+    @Html.ActionLink("Consults List", "Index") |
+    @Html.ActionLink("Patient Record", "Details", "Patient", new { Id = Model.PatientId },null)
+</p>

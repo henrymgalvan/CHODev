@@ -1,0 +1,36 @@
+﻿@model cho500.Entity.ChildBirthFollowUpVisit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Details</h3>
+
+<div>
+    <h4>Child Birth Follow Up Visit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.ChildHealthRecord.Person.FullName)</dt>
+        <dd>@Html.DisplayFor(model => model.ChildHealthRecord.Person.FullName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.AgeInWeeks)</dt>
+        <dd>@Html.DisplayFor(model => model.AgeInWeeks)</dd>
+        <dt>@Html.DisplayNameFor(model => model.DateOfFollowup)</dt>
+        <dd>@Html.DisplayFor(model => model.DateOfFollowup)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Weight)</dt>
+        <dd>@Html.DisplayFor(model => model.Weight)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Height)</dt>
+        <dd>@Html.DisplayFor(model => model.Height)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Diagnosis)</dt>
+        <dd>@Html.DisplayFor(model => model.Diagnosis)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Physician.Name)</dt>
+        <dd>@Html.DisplayFor(model => model.Physician.Name)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Notes)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("List of Follow Ups", "Index") |
+    @Html.ActionLink("Patient Child Record", "Details", "ChildRecord", new { id = Model.PersonID }, null)
+
+</p>
