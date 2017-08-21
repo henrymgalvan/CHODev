@@ -264,6 +264,7 @@
     <Compile Include="Models\ChildRecords\ChildImmunizationRecordEditViewModel.cs" />
     <Compile Include="Models\ChildRecords\ChildImmunizationRecordViewModel.cs" />
     <Compile Include="Models\Households\HouseholdIndexViewModel.cs" />
+    <Compile Include="Models\Patient\ConsultationSummaryViewModel.cs" />
     <Compile Include="Models\Patient\DetailsPatientViewModel.cs" />
     <Compile Include="Models\temp\CreateAnthroViewModel.cs" />
     <Compile Include="Models\CreateConsultViewModel.cs" />

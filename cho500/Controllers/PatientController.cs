@@ -75,6 +75,9 @@ namespace cho500.Controllers
             model.Mother = (person.MotherPersonId > 0 ) ? db.Patient.Find(person.MotherPersonId).FullName.ToString() : "";
             model.BloodType = (person.BloodTypeID > 0 ) ? db.BloodType.Find(person.BloodTypeID).Type.ToString() : "";
 
+            //model.ConsultationSummary.Id = person.
+
+
             return View(model);
         }
 

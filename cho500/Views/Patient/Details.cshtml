@@ -117,7 +117,7 @@
         <th>Age</th>
         <th>Physician</th>
     </tr>
-    @*@foreach (var item in Model.Consultations)
+    @foreach (var item in Model.Consultations)
     {
         <tr>
             <td>@Html.ActionLink(item.ChiefComplaint, "Details","Consults", new { id = item.ConsultationID }, null)</td>
@@ -128,6 +128,6 @@
             <td>@Html.DisplayFor(modelItem => item.Age)</td>
             <td>@Html.DisplayFor(modelItem=>item.Physician.Name)</td>
         </tr>
-    }*@
+    }
 
 </table>

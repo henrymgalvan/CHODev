@@ -43,7 +43,9 @@ namespace cho500.App_Start
                     .ForMember(dest => dest.BloodType,
                                 opt => opt.MapFrom(src => src.BloodType.Type));
 
-                config.CreateMap<Person, DetailsPatientViewModel>();
+                config.CreateMap<Person, DetailsPatientViewModel>()
+                    .ForMember(dest => dest.ID,
+                                opt => opt.MapFrom(src => src.PersonID));
 
                 config.CreateMap<CreatePersonViewModel, Person>();
 

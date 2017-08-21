@@ -130,5 +130,8 @@ namespace cho500.Models.Patient
 
         [Display(Name = "Blood Type")]
         public string BloodType { get; set; }
+
+        public ConsultationSummaryViewModel ConsultationSummary { get; set; }
+
     }
 }

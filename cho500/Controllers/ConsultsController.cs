@@ -149,8 +149,9 @@ namespace cho500.Controllers
             }
             var model = new CreateConsultViewModel();
 
+            var patient = db.Patient.Find(PatientId);
             model.PatientId = (int)PatientId;
-            model.PatientName = db.Patient.Find(PatientId).FullName;
+            if (patient != null) { model.PatientName = patient.FullName.ToString(); }
             model.DateOfConsult = DateTime.Now;
             model.PreviousConsultDate = DateTime.Now;
             PopulatePhysicianDropDownList();
@@ -162,7 +163,9 @@ namespace cho500.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientId,PatientName,AdmittedBy,DateOfConsult,PreviousConsultDate,PreviousConsult,ChiefComplaint,Age,BPFirstReading,BPSecondReading,BPAverage,RaisedBP,PulseRate,RR,Temperature,WeightInKgms,HeightInCm,WaistCircumferenceInCm,CentralAdiposity,History,PhysicalExam,DiagnosisLabResult,ManagementTreatment,Recommendation,Pharmacy,PhysicianID")] CreateConsultViewModel createConsultationViewModel)
+        //public ActionResult Create([Bind(Include = "PatientId,PatientName,AdmittedBy,DateOfConsult,PreviousConsultDate,PreviousConsult,ChiefComplaint,Age,BPFirstReading,BPSecondReading,BPAverage,RaisedBP,PulseRate,RR,Temperature,WeightInKgms,HeightInCm,WaistCircumferenceInCm,CentralAdiposity,History,PhysicalExam,DiagnosisLabResult,ManagementTreatment,Recommendation,Pharmacy,PhysicianID")] CreateConsultViewModel createConsultationViewModel)
+        public ActionResult Create(CreateConsultViewModel createConsultationViewModel)
+
         {
             if (ModelState.IsValid)
             {
